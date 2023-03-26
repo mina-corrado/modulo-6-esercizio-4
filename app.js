@@ -13,11 +13,12 @@ const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
 app.use(express.json());
+app.use(cors());
+
 app.use(routesBlogPost);
 app.use(routesAutore);
 app.use(routesComment);
 
-app.use(cors());
 
 app.use(logger);
 app.use(errorHandler);
